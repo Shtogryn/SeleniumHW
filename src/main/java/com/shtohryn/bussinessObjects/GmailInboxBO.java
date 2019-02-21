@@ -27,6 +27,7 @@ public class GmailInboxBO {
     }
 
     public void sendDraft() {
+        draftPage.openDraft();
         draftPage.sendDraft();
     }
 }

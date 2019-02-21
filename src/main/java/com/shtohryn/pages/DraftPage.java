@@ -11,18 +11,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DraftPage {
     WebDriver webDriver;
     WebDriverWait webDriverWait;
-    @FindBy(css = "#\\3a be")
+    //@FindBy(css = "#\\3a be")
+    @FindBy(xpath = "//*[@id=':cg']")
     private WebElement lastMessage;
     @FindBy(xpath = "//div[@class='AD']//tr[@class='btC']/td/div/div[@role='button']")
-    WebElement sendButtom;
+    private WebElement sendButtom;
 
     public DraftPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
-        this.webDriverWait = new WebDriverWait(webDriver, 15);
+        this.webDriverWait = new WebDriverWait(webDriver, 10);
     }
 
     public void openDraft() {
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#\\3a be")));
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=':cg']")));
         lastMessage.click();
     }
 

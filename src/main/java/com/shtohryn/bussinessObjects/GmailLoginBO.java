@@ -20,8 +20,8 @@ public class GmailLoginBO {
         this.passwordPage = new PasswordPage(webDriver);
     }
 
-    public void Authorization() {
-        loginPage.submitEmail(user.getEmail());
-        passwordPage.submitPassword(user.getPassword());
+    public void Authorization(String email, String password) {
+        loginPage.submitEmail(email);
+        passwordPage.submitPassword(password);
     }
 }
