@@ -1,5 +1,7 @@
 package com.shtohryn.pages;
 
+import com.shtohryn.webElements.Button;
+import com.shtohryn.webElements.TextField;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,5 +43,37 @@ public class InboxPage {
 
     public void enterDrafts() {
         draftButton.click();
+    }
+
+    public WebDriver getWebDriver() {
+        return webDriver;
+    }
+
+    public WebDriverWait getWebDriverWait() {
+        return webDriverWait;
+    }
+
+    public WebElement getButtonCompose() {
+        return buttonCompose;
+    }
+
+    public WebElement getTextAreaTo() {
+        return textAreaTo;
+    }
+
+    public WebElement getSubjectbox() {
+        return subjectbox;
+    }
+
+    public WebElement getMessageTextArea() {
+        return messageTextArea;
+    }
+
+    public WebElement getSendButtom() {
+        return sendButtom;
+    }
+
+    public WebElement getDraftButton() {
+        return draftButton;
     }
 }

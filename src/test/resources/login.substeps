@@ -1,0 +1,15 @@
+# your new substeps file
+
+Feature: Login gmail,write draft message and sand
+
+  Scenario Outline: Login gmail
+    When user log in using email as <tom.shtohryn.2004@gmail.com> and password as <Hardasarock>
+    When user click submit button
+    Then authorization should be successful
+    And user create new message
+    And delete this messages
+    Then canceled delete messages
+
+    Examples:
+    |User | Password|
+    |testng.userdrive@gmail.com | 1111test|

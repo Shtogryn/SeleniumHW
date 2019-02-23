@@ -1,5 +1,6 @@
 package com.shtohryn.pages;
 
+import com.shtohryn.webElements.Button;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DraftPage {
     WebDriver webDriver;
     WebDriverWait webDriverWait;
-    //@FindBy(css = "#\\3a be")
     @FindBy(xpath = "//*[@id=':cg']")
     private WebElement lastMessage;
     @FindBy(xpath = "//div[@class='AD']//tr[@class='btC']/td/div/div[@role='button']")
