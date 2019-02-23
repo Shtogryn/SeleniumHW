@@ -7,6 +7,7 @@ import com.shtohryn.pages.InboxPage;
 import org.openqa.selenium.WebDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GmailInboxBO {
@@ -37,5 +38,16 @@ public class GmailInboxBO {
     public void sendDraft() {
         draftPage.openDraft();
         draftPage.sendDraft();
+        logger.info("Message has been sent");
+    }
+
+    public boolean isSent() {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(inboxPage.getLableSentMessage()));
+        } catch (Exception ex) {
+            logger.error("ERROR! Message did not sent! TEST ENDING");
+            return false;
+        }
+        return true;
     }
 }

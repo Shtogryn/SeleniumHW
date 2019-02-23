@@ -5,6 +5,8 @@ import com.shtohryn.bussinessObjects.GmailInboxBO;
 import com.shtohryn.bussinessObjects.GmailLoginBO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -29,6 +31,7 @@ public class CreateAndSendDraftMessage {
         gmailLoginBO = new GmailLoginBO(webDriver);
         gmailInboxBO = new GmailInboxBO(webDriver);
     }
+
     @DataProvider(name = "user-data")
     public Object[][] userReciverData() {
         String csvFile = "src/main/resources/user.csv";
@@ -52,5 +55,11 @@ public class CreateAndSendDraftMessage {
         gmailLoginBO.Authorization(email, password);
         gmailInboxBO.writeAndSaveMessage();
         gmailInboxBO.sendDraft();
+        Assert.assertTrue(gmailInboxBO.isSent());
+    }
+
+    @AfterClass
+    public void quitDriver() {
+        webDriver.quit();
     }
 }

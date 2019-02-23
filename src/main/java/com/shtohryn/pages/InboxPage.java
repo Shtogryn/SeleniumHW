@@ -25,6 +25,9 @@ public class InboxPage {
     private WebElement sendButtom;
     @FindBy(css = "*[href*='#drafts'")
     private WebElement draftButton;
+    @FindBy(xpath = "//*[@id=\'link_vsm\']")
+    private WebElement lableSentMessage;
+
 
     public InboxPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
@@ -75,5 +78,9 @@ public class InboxPage {
 
     public WebElement getDraftButton() {
         return draftButton;
+    }
+
+    public WebElement getLableSentMessage() {
+        return lableSentMessage;
     }
 }
