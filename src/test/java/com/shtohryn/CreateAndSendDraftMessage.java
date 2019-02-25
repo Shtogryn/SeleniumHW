@@ -10,7 +10,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,8 +57,8 @@ public class CreateAndSendDraftMessage {
         Assert.assertTrue(gmailInboxBO.isSent());
     }
 
-    @AfterClass
-    public void quitDriver() {
-        webDriver.quit();
-    }
+//    @AfterClass
+////    public void quitDriver() {
+////        webDriver.quit();
+////    }
 }
