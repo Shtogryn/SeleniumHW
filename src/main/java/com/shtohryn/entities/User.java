@@ -6,7 +6,7 @@ public class User {
 
     public User() {
         this.email = "tom.shtogryn.2004";
-        this.password = "Hardasarock2019";
+        this.password = "";
     }
 
     public String getEmail() {
